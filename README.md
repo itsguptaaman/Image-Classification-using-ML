@@ -57,5 +57,9 @@ Open your browser and go to http://127.0.0.1:5000 to upload images and get predi
 ### Testing
 Sample images for testing the model are provided in the test_images directory. Use these images to validate the model's performance via the Flask application.
 
+### Sample Testing
+![prediction](https://github.com/user-attachments/assets/e328b827-e2b5-4a0e-a5e6-203975d52f81)
+
+
 ### Contributing
 Contributions are welcome! Please fork this repository and submit a pull request with your enhancements.
