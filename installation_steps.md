@@ -22,7 +22,7 @@ conda activate task
 pip install -r requiremnts.txt
 ```
 
-### To start the flas server 
+### To start the flask server 
 ```
 python app.py
 ```
