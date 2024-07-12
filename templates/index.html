@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Image Classification Using Machine Learning</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-center">Image Classification Using Machine Learning</h1>
+          <h6>Classes Available :- Building, Forest, Glacier, Mountain, Sea, Street </h6>
+          <form method="post" action="/predict" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="file">Choose an image:</label>
+              <input type="file" name="file" class="form-control-file" id="file">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+          </form>
+          {% if image_data %}
+          <div class="mt-4 text-center">
+            <h2>Uploaded Image:</h2>
+            <img src="data:image/{{ filename.split('.')[-1] }};base64,{{ image_data }}" class="img-fluid img-thumbnail">
+            <h2 class="mt-3">Prediction:</h2>
+            <p class="font-weight-bold">{{ prediction }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
