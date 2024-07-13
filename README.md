@@ -41,7 +41,7 @@ The main objective of this project is to provide accurate image classification w
 ## Getting Started
 
 ### Requirements
-Please refer to the `installation_steps.md` file for detailed installation instructions.
+Please refer to the [installation](https://github.com/itsguptaaman/Image-Classification-using-ML/blob/main/installation_steps.md) file for detailed installation instructions.
 
 ### Running the Flask Application
 
