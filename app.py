@@ -15,7 +15,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'supersecretkey'
 
 model_data = load_model(model_path)
+
 clf = model_data['classifier']
+scaler = model_data['scaler']
 pca = model_data['pca']
 le = model_data['label_encoder']
 
@@ -40,7 +42,7 @@ def upload_file():
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        predicted_label = predict_image(filepath, clf, pca, le)
+        predicted_label = predict_image(filepath, clf, pca, scaler, le)
         print(f"Predicted label: {predicted_label}")
         with open(filepath, "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read()).decode('utf-8')

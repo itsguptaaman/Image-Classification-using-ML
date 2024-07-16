@@ -2,3 +2,5 @@ scikit-learn
 opencv-python
 flask
 xgboost
+scikit-image
+imblearn
